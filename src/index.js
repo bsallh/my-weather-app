@@ -47,11 +47,3 @@ function searchCity(city) {
   let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apikey}&units=metric`;
   axios.get(apiUrl).then(changeTemp);
 }
-
-//humidity, percipitation, and win
-let humidityElement = document.querySelector("humidity");
-let percipitationElement = document.querySelector("percipitation");
-let windElement = document.querySelector("wind");
-humidityElement.innerHTML = response.data.main.humidity;
-percipitationElement.innerHTML = response.data.main.percipitation;
-windElement.innerHTML = Math.round(response.data.wind.speed);
