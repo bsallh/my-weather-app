@@ -44,7 +44,7 @@ function changeTemp(response) {
 
 function searchCity(city) {
   let apiKey = "84fc8tob0a63d91c4609042a3b47d99c";
-  let apiUrl = `https://api.shecodes.io/weather/v1/current?query={query}&key=${apikey}&units=metric`;
+  let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apikey}&units=metric`;
   axios.get(apiUrl).then(changeTemp);
 }
 console.log(apiUrl);
