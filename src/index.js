@@ -35,9 +35,9 @@ cityForm.addEventListener("submit", changeCity);
 
 // week 5: search engine
 function changeTemp(response) {
-  document.querySelector("#new-city").innerHTML = response.data.name;
+  document.querySelector("#new-city").innerHTML = response.data.city;
 
-  let temp = Math.round(response.data.main.temp);
+  let temp = Math.round(response.data.temperature.current);
   let tempElement = document.querySelector("#temperature");
   tempElement.innerHTML = temp + "°C";
 }
