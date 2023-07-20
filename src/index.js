@@ -43,7 +43,7 @@ function changeTemp(response) {
   let windElement = document.querySelector("#wind");
   tempElement.innerHTML = temp + "°C";
   humidityElement.innerHTML = response.data.temperature.humidity;
-  windElement.innerHTML = Math.round(response.data.speed);
+  windElement.innerHTML = Math.round(response.data.wind.speed);
 }
 
 function searchCity(city) {
