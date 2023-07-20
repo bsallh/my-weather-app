@@ -41,7 +41,7 @@ function changeTemp(response) {
   let tempElement = document.querySelector("#temperature");
   let humidityElement = document.querySelector("#humidity");
   let windElement = document.querySelector("#wind");
-  tempElement.innerHTML = temp + "°C";
+  tempElement.innerHTML = resonse.date.main.temp + "°C";
   humidityElement.innerHTML = response.data.temperature.humidity;
   windElement.innerHTML = Math.round(response.data.wind.speed);
 }
