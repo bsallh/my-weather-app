@@ -45,21 +45,6 @@ function changeTemp(response) {
 function searchCity(city) {
   let apiKey = "84fc8tob0a63d91c4609042a3b47d99c";
   let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
-  axios.get(apiUrl).then((changeTemp) => {
-    changeTemp(response);
-    updateHumidity(resonse);
-    updateWind(response);
-  });
+  axios.get(apiUrl).then(changeTemp);
 }
-
-function updateHumidity(response) {
-  let humidity = response.data.humidity;
-  let humidityElement = document.querySelector("#humidity");
-  humidityElement.innerText = humidity + "%";
-}
-
-function updateWind(response) {
-  let windSpeed = response.data.wind_speed;
-  let windElement = document.querySelector("#wind");
-  windElement.innerText = windSpeed + "km/h"
-}
+console.log(apiUrl);
