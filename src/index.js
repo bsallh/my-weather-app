@@ -41,7 +41,6 @@ function changeTemp(response) {
   let tempElement = document.querySelector("#temperature");
   tempElement.innerHTML = temp + "°C";
 }
-}
 
 function searchCity(city) {
   let apiKey = "84fc8tob0a63d91c4609042a3b47d99c";
