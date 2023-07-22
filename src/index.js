@@ -41,13 +41,11 @@ function changeTemp(response) {
   let tempElement = document.querySelector("#temperature");
   tempElement.innerHTML = temp + "°C";
 
-  let humidity = response.data.main.humidity;
   let humidityElement = document.querySelector("#humidity");
-  humidityElement.innerHTML = humidity + "%";
+  humidityElement.innerHTML = response.data.main.humidity;
 
-  let windSpeed = response.data.wind.speed;
-  let windElement = document.querySelector("#wind");
-  windElement.innerHTML = windSpeed + " km/h";
+  let windElement = document.querySelector("wind");
+  windElement.innerHTML = response.data.wind.speed;
 }
 
 function searchCity(city) {
