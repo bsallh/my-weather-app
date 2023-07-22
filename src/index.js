@@ -40,6 +40,12 @@ function changeTemp(response) {
   let temp = Math.round(response.data.temperature.current);
   let tempElement = document.querySelector("#temperature");
   tempElement.innerHTML = temp + "°C";
+
+  let humidityElement = document.querySelector("#humidity");
+  humidityElement.innerHTML = response.data.main.humidity;
+
+  let windElement = document.querySelector("wind");
+  windElement.innerHTML = response.data.wind.speed;
 }
 
 function searchCity(city) {
