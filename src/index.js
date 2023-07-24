@@ -42,10 +42,10 @@ function changeTemp(response) {
   tempElement.innerHTML = temp + "°C";
 
   let humidityElement = document.querySelector("#humidity");
-  humidityElement.innerHTML = response.data.temperature.humidity + "%";
+  humidityElement.innerHTML = response.data.temperature[0].humidity + "%";
 
   let windElement = document.querySelector("#wind");
-  windElement.innerHTML = response.data.wind.speed + "km/h";
+  windElement.innerHTML = response.data.wind.speed + " km/h";
 }
 
 function searchCity(city) {
