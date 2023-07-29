@@ -1,3 +1,5 @@
+function updateWeather() {
+
 // current date and time
 let now = new Date();
 
@@ -53,4 +55,8 @@ function searchCity(city) {
   let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
   axios.get(apiUrl).then(changeTemp);
 }
-console.log(apiUrl);
+
+searchCity("Calgary");
+}
+
+window.onload = updateWeather;
