@@ -33,17 +33,6 @@ function changeCity(event) {
 let cityForm = document.querySelector("form");
 cityForm.addEventListener("submit", changeCity);
 
-function displayFahrenheitTemperature(event) {
-  event.preventDefault();
-  let fahrenheitTemperature = (14 * 9) / 5 +32;
-  alert("Link clicked");
-  let temperatureElement = document.querySelector("#temperature")
-  temperatureElement.innerHTML = fahrenheitTemperature;
-}
-
-let fahrenheitLink = document.querySelector("#fahrenheit-link");
-fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
-
 // week 5: search engine
 function changeTemp(response) {
   document.querySelector("#new-city").innerHTML = response.data.city;
@@ -58,6 +47,20 @@ function changeTemp(response) {
   let windElement = document.querySelector("#wind");
   windElement.innerHTML = response.data.wind.speed + " km/h";
 }
+
+celsiusTemperature = response.data.temperature.current;
+
+let celsiusTemperature = null;
+
+function displayFahrenheitTemperature(event) {
+  event.preventDefault();
+  let fahrenheitTemperature = (celsiusTemperature * 9) / 5 +32;
+  let temperatureElement = document.querySelector("#temperature")
+  temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
+}
+
+let fahrenheitLink = document.querySelector("#fahrenheit-link");
+fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
 
 function searchCity(city) {
   let apiKey = "84fc8tob0a63d91c4609042a3b47d99c";
