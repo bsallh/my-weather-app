@@ -33,6 +33,17 @@ function changeCity(event) {
 let cityForm = document.querySelector("form");
 cityForm.addEventListener("submit", changeCity);
 
+function displayFahrenheitTemperature(event) {
+  event.preventDefault();
+  let fahrenheitTemperature = (14 * 9) / 5 +32;
+  alert("Link clicked");
+  let temperatureElement = document.querySelector("#temperature")
+  temperatureElement.innerHTML = fahrenheitTemperature;
+}
+
+let fahrenheitLink = document.querySelector("#fahrenheit-link");
+fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
+
 // week 5: search engine
 function changeTemp(response) {
   document.querySelector("#new-city").innerHTML = response.data.city;
@@ -53,4 +64,4 @@ function searchCity(city) {
   let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
   axios.get(apiUrl).then(changeTemp);
 }
-console.log(apiUrl);
+
