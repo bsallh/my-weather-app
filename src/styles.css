@@ -31,3 +31,9 @@ body {
     text-align: center;
     margin: 0px, 0px, 0px, 0px;
 }
+
+.checked {
+    color: white !important;
+    background-color: blue !important;
+    border-color: blue !important;
+}
