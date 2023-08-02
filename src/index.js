@@ -35,6 +35,7 @@ cityForm.addEventListener("submit", changeCity);
 
 // week 5: search engine
 function changeTemp(response) {
+  celsiusTemperature = response.data.temperature.current;
   document.querySelector("#new-city").innerHTML = response.data.city;
 
   let temp = Math.round(response.data.temperature.current);
@@ -48,7 +49,6 @@ function changeTemp(response) {
   windElement.innerHTML = response.data.wind.speed + " km/h";
 }
 
-celsiusTemperature = response.data.temperature.current;
 
 let celsiusTemperature = null;
 
@@ -56,6 +56,9 @@ function displayFahrenheitTemperature(event) {
   event.preventDefault();
   let fahrenheitTemperature = (celsiusTemperature * 9) / 5 +32;
   let temperatureElement = document.querySelector("#temperature")
+  let celsiusLink = document.querySelector("#celsius-link");
+  celsiusLink.classList.remove("checked")
+  fahrenheitLink.classList.add("checked")
   temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
 }
 
@@ -68,3 +71,4 @@ function searchCity(city) {
   axios.get(apiUrl).then(changeTemp);
 }
 
+searchCity("Calgary");
