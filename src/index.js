@@ -53,6 +53,9 @@ function changeTemp(response) {
   weatherElement.innerHTML = weatherDescription;
 }
 
+let iconElement = document.querySelector("#icon");
+iconElement.setAttribute("src", `http://shecodes-assets.s3.amazonaws.com/api/weather/icons/clear-sky-day.png`);
+
 
 let celsiusTemperature = null;
 
