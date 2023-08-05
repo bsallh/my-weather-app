@@ -78,6 +78,6 @@ function searchCity(city) {
   axios.get(apiUrl).then(changeTemp);
 }
 
-  searchCity("Calgary");
+searchCity("Calgary");
 
 window.addEventListener("load", defaultCtiy);
