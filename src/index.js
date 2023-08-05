@@ -47,6 +47,10 @@ function changeTemp(response) {
 
   let windElement = document.querySelector("#wind");
   windElement.innerHTML = response.data.wind.speed + " km/h";
+
+  let weatherDescription = resonse.data.condition.description;
+  let weatherElement = document.querySelector("#weather");
+  weatherElement.innerHTML = weatherDescription;
 }
 
 
@@ -71,4 +75,8 @@ function searchCity(city) {
   axios.get(apiUrl).then(changeTemp);
 }
 
-searchCity("Calgary");
+function defaultCity() {
+  searchCity("Calgary");
+}
+
+window.addEventListener("load", defaultCtiy);
