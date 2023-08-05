@@ -51,11 +51,12 @@ function changeTemp(response) {
   let weatherDescription = resonse.data.condition.description;
   let weatherElement = document.querySelector("#weather");
   weatherElement.innerHTML = weatherDescription;
-}
 
 let iconElement = document.querySelector("#icon");
 iconElement.setAttribute("src", `http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${response.data.condition.icon}.png`);
 
+iconElement.setAttribute("alrt", response.data.condition.description);
+}
 
 let celsiusTemperature = null;
 
