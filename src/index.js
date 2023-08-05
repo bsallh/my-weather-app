@@ -59,7 +59,7 @@ function displayFahrenheitTemperature(event) {
   let celsiusLink = document.querySelector("#celsius-link");
   celsiusLink.classList.remove("checked")
   fahrenheitLink.classList.add("checked")
-  temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
+  temperatureElement.innerHTML = Math.round(fahrenheitTemperature) + "°F";
 }
 
 let fahrenheitLink = document.querySelector("#fahrenheit-link");
