@@ -54,7 +54,7 @@ function changeTemp(response) {
 }
 
 let iconElement = document.querySelector("#icon");
-iconElement.setAttribute("src", `http://shecodes-assets.s3.amazonaws.com/api/weather/icons/clear-sky-day.png`);
+iconElement.setAttribute("src", `http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${response.data.condition.icon}.png`);
 
 
 let celsiusTemperature = null;
