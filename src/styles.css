@@ -52,8 +52,3 @@ body {
 .buttons-container {
     margin-left: 20px;
 }
-
-.humidity-wind-text {
-    display: inline-block;
-    text-align: right;
-}
