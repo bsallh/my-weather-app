@@ -48,7 +48,7 @@ function changeTemp(response) {
   let windElement = document.querySelector("#wind");
   windElement.innerHTML = response.data.wind.speed + " km/h";
 
-  let weatherDescription = resonse.data.condition.description;
+  let weatherDescription = response.data.condition.description;
   let weatherElement = document.querySelector("#weather");
   weatherElement.innerHTML = weatherDescription;
 
