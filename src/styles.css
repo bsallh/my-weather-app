@@ -40,4 +40,5 @@ body {
 
 .float-right {
     float: right;
+    margin-bottom: 20px;
 }
