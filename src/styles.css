@@ -38,3 +38,6 @@ body {
     border-color: blue !important;
 }
 
+.float-right {
+    float: right;
+}
