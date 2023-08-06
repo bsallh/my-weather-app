@@ -37,3 +37,29 @@ body {
     background-color: blue !important;
     border-color: blue !important;
 }
+
+.weather-temperature {
+    display: flex;
+    justify-content: space-between;
+}
+
+.icon-container {
+    display: flex;
+    align-items: center;
+}
+
+.temperature-container {
+    display: flex;
+    align-items: center;
+}
+
+.buttons-humidity-wind-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.humidity-wind-text {
+    display: inline-block;
+    text-align: right;
+}
