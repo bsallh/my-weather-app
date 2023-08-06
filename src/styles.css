@@ -38,17 +38,3 @@ body {
     border-color: blue !important;
 }
 
-.icon-container,
-.temperature-container,
-.buttons-container {
-    display: flex;
-    align-items: center;
-}
-
-.temperature-container {
-    margin-left: 10px;
-}
-
-.buttons-container {
-    margin-left: 20px;
-}
