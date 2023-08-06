@@ -63,8 +63,9 @@ let celsiusTemperature = null;
 function displayFahrenheitTemperature(event) {
   event.preventDefault();
   let fahrenheitTemperature = (celsiusTemperature * 9) / 5 +32;
-  let temperatureElement = document.querySelector("#temperature")
+  let temperatureElement = document.querySelector("#temperature");
   let celsiusLink = document.querySelector("#celsius-link");
+  let fahrenheitLink = document.querySelector("#fahrenheit-link");
   celsiusLink.classList.remove("checked")
   fahrenheitLink.classList.add("checked")
   temperatureElement.innerHTML = Math.round(fahrenheitTemperature) + "°F";
@@ -72,6 +73,19 @@ function displayFahrenheitTemperature(event) {
 
 let fahrenheitLink = document.querySelector("#fahrenheit-link");
 fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
+
+function displayCelsiusTemperature(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector("#temperature");
+  let celsiusLink = document.querySelector("#celsius-link");
+  let fahrenheitLink = document.querySelector("#fahrenheit-link");
+  celsiusLink.classList.add("checked");
+  fahrenheitLink.classList.remove("checked");
+  temperatureElement.innerHTML = Math.round(celsiusTemperature) + "°C"
+}
+
+let celsiusLink = document.querySelector("#celsius-link");
+celsiusLink.addEventListener("click", displayCelsiusTemperature);
 
 function searchCity(city) {
   let apiKey = "84fc8tob0a63d91c4609042a3b47d99c";
