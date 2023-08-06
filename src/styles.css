@@ -38,6 +38,11 @@ body {
     border-color: blue !important;
 }
 
+.col-5 {
+    display: flex;
+    align-items: center;
+}
+
 .float-right {
     float: right;
     margin-bottom: 20%;
