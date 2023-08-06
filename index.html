@@ -54,37 +54,34 @@
             <h2 id="weather">
             </h2>
 
-            <div class="container text-left">
-                <div class="row">
-                    <div class="col-5">
-                        <img src="" alt="" id="icon" class="float-left"/>
-                        <p id="temperature" class="float-right">
-                            <span class="units"></span>
-                        </p>
-                    </div>
-                    <div class="col-4">
-                        <div class="btn-group btn-group-sm" id="temp-button" role="group"
-                            aria-label="Small button group">
-                            <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
-                                <input type="radio" class="btn-check" name="btnradio" id="btnradio1"
-                                    autocomplete="off" />
-                                <label class="btn btn-outline-primary checked" for="btnradio1"
-                                    id="celsius-link">°C</label>
-                                <input type="radio" class="btn-check" name="btnradio" id="btnradio2"
-                                    autocomplete="off" />
-                                <label class="btn btn-outline-primary" for="btnradio2" id="fahrenheit-link">°F</label>
-                            <br />
-                            <div class="col-3">
-                                Humidity: <span id="humidity">%</span>
-                            <br />
-                                Wind: <span id="wind">km/h</span>
-                            </div>
-                            </div>
-                        </div>
-                    </div>
+<div class="container text-left">
+    <div class="row">
+        <div class="col-5">
+            <img src="" alt="" id="icon" class="float-left" />
+            <p id="temperature" class="float-right">
+                <span class="units"></span>
+            </p>
+        </div>
+        <div class="col-4">
+            <div class="btn-group btn-group-sm" id="temp-button" role="group" aria-label="Small button group">
+                <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+                    <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" />
+                    <label class="btn btn-outline-primary checked" for="btnradio1" id="celsius-link">°C</label>
+                    <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off" />
+                    <label class="btn btn-outline-primary" for="btnradio2" id="fahrenheit-link">°F</label>
                 </div>
             </div>
+        </div>
+        <!-- Move the humidity and wind div outside the btn-group div -->
+        <div class="col-3">
+            <div class="col-12">
+                Humidity: <span id="humidity">%</span>
+                <br />
+                Wind: <span id="wind">km/h</span>
             </div>
+        </div>
+    </div>
+</div>
 
             <table class="table table-borderless">
                 <thead>
