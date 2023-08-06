@@ -41,11 +41,3 @@ body {
 .float-right {
     float: right;
 }
-
-.col-4 {
-    margin-left: 40%;
-}
-
-.col-3 {
-    margin-left: 10%;
-}
