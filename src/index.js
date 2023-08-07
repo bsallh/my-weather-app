@@ -22,6 +22,48 @@ let dateTime = document.getElementById("date-time");
 dateTime.innerHTML =
   day + " " + hours + ":" + (minutes < 10 ? "0" : "") + minutes + " " + ampm;
 
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+
+  let forecastHTML = `<div class="row">`;
+  let days =["Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+  days.forEach(function(day) {
+     forecastElement.innerHTML = forecastHTML + 
+      `
+        <table class="table table-borderless">
+            <thead>
+                <tr>
+                    <th scope="col">Friday</th>
+                    <th scope="col">Saturday</th>
+                    <th scope="col">Sunday</th>
+                    <th scope="col">Monday</th>
+                    <th scope="col">Tuesday</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><span class="icon-forecast">🌨️</span></td>
+                    <td><span class="icon-forecast">🌤️</span></td>
+                    <td><span class="icon-forecast">🌥️</span></td>
+                    <td><span class="icon-forecast">☁️</span></td>
+                    <td><span class="icon-forecast">🌤️</span></td>
+                </tr>
+                <tr>
+                    <td>4° | -4°</td>
+                    <td>11° | -1°</td>
+                    <td>14° | 1°</td>
+                    <td>13° | 3°</td>
+                    <td>15° | 2°</td>
+                </tr>
+            </tbody>
+        </table>;
+        `;
+  })
+
+          forecastHTML = forecastHTML + `</div>`;
+          forecastElement.innerHTML = forecastHTML;
+}
+
 // search engine
 function changeCity(event) {
   event.preventDefault();
@@ -52,11 +94,11 @@ function changeTemp(response) {
   let weatherElement = document.querySelector("#weather");
   weatherElement.innerHTML = weatherDescription;
 
-let iconElement = document.querySelector("#icon");
-iconElement.setAttribute("src", `http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${response.data.condition.icon}.png`);
+  let iconElement = document.querySelector("#icon");
+  iconElement.setAttribute("src", `http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${response.data.condition.icon}.png`);
 
-iconElement.setAttribute("alrt", response.data.condition.description);
-}
+  iconElement.setAttribute("alrt", response.data.condition.description);
+  }
 
 let celsiusTemperature = null;
 
@@ -102,5 +144,6 @@ function searchCity(city) {
 }
 
 searchCity("Calgary");
+displayForecast();
 
 window.addEventListener("load", defaultCtiy);
