@@ -22,7 +22,7 @@ let dateTime = document.getElementById("date-time");
 dateTime.innerHTML =
   day + " " + hours + ":" + (minutes < 10 ? "0" : "") + minutes + " " + ampm;
 
-function displayForecast() {
+function displayForecast(response) {
   let forecastElement = document.querySelector("#forecast");
 
   let forecastHTML = `<div class="row">`;
@@ -44,6 +44,12 @@ function displayForecast() {
 
           forecastHTML = forecastHTML + `</div>`;
           forecastElement.innerHTML = forecastHTML;
+}
+
+function getForecast(coordinates) {
+  let apiKey = "84fc8tob0a63d91c4609042a3b47d99c";
+  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?lon=${coordinates.longitude}&lat=${coordinates.latitude}&key=${apiKey}&units=metric`
+  axios.get(apiUrl).then(displayForecast); 
 }
 
 // search engine
@@ -80,6 +86,9 @@ function changeTemp(response) {
   iconElement.setAttribute("src", `http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${response.data.condition.icon}.png`);
 
   iconElement.setAttribute("alrt", response.data.condition.description);
+
+  getForecast(response.data.coordinates);
+
   }
 
 let celsiusTemperature = null;
