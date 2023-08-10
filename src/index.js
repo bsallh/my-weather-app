@@ -43,8 +43,8 @@ function displayForecast(response) {
       forecastHTML +
       `
       <div class="col-2">
-        <div class="weather-forecast-date">${formatDay(forecastDay.dt)}</div>
-        <img src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${forecastDay.weather[0].icon}.png" alt="" width="42"/>
+        <div class="weather-forecast-date">${formatDay(forecastDay.time)}</div>
+        <img src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${forecastDay.condition.icon}.png" alt="" width="42"/>
         <div class="weather-forecast-temperatures">
           <span class="weather-forecast-temperature-max">${Math.round(forecastDay.temperature.maximum)}°</span>
           <span class="weather-forecast-temperature-min">${Math.round(forecastDay.temperature.minimum)}°<span>
@@ -147,6 +147,3 @@ function searchCity(city) {
 }
 
 searchCity("Calgary");
-displayForecast();
-
-window.addEventListener("load", defaultCtiy);
